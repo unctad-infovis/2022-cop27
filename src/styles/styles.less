@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300.css');
 //@import url('https://fonts.googleapis.com/css?family=Roboto+Serif:600.css');
 
 @import 'colors.less';
@@ -71,6 +72,116 @@
         font-size: 12px !important;
         &:hover {
           background-color: @unblue !important; 
+        }
+      }
+    }
+  }
+  .quote_container {
+    box-sizing: border-box;
+    font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    letter-spacing: 0.02em;
+    margin: auto auto 40px auto;
+    max-width: 600px;
+    overflow: hidden;
+    padding: 60px 0 0 70px;
+    position: relative;
+    width: 100%;
+    .quote_element {
+      &.quote_mark {
+        position: absolute;
+        transform: translate(-75px, -250px);
+        img {
+          opacity: 0.5;
+          width: 150px;
+        }
+        &.visible {
+          transform: translate(-75px, -71px);
+          transition-duration: 3s;
+          transition-property: transform;
+          @media all and (max-width: 699px) {
+            transition-delay: 0s;
+          }
+          @media all and (min-width: 700px) {
+            transition-delay: 250ms;
+          }
+        }
+      }
+      &.quote_text_upper {
+        color: @unblue;
+        font-size: 28px;
+        font-weight: 700;
+        line-height: 28px;
+        line-height: 32px;
+        margin-bottom: 15px;
+        position: relative;
+        text-transform: uppercase;
+        transform: translate(0, -250px);
+        &.visible {
+          transform: translate(0, 0);
+          transition-duration: 1.5s;
+          transition-property: transform;
+          transition-timing-function: ease;
+          @media all and (max-width: 699px) {
+            transition-delay: 0s;
+          }
+          @media all and (min-width: 700px) {
+            transition-delay: 250ms;
+          }
+        }
+      }
+      &.quote_text_lower {
+        color: @unblue;
+        font-size: 20px;
+        font-weight: 300;
+        line-height: 22px;
+        margin-bottom: 15px;
+        max-width: 450px;
+        position: relative;
+        transform: translate(0, 250px);
+        &.visible {
+          transform: translate(0, 0);
+          transition-duration: 1.5s;
+          transition-property: transform;
+          @media all and (max-width: 699px) {
+            transition-delay: 0s;
+          }
+          @media all and (min-width: 700px) {
+            transition-delay: 250ms;
+          }
+        }
+      }
+      &.quote_signature {
+        align-items: left;
+        background-color: @unblue;
+        color: #fff;
+        display: inline-flex;
+        flex-direction: column;
+        padding: 7px 15px;
+        position: relative;
+        text-transform: uppercase;
+        transform: translate(0, 200px);
+        .title {
+          display: inline-block;
+          font-size: 14px;
+          letter-spacing: 0.1em;
+          margin-bottom: 3px;
+        }
+        .name {
+          display: inline-block;
+          font-size: 20px;
+          font-weight: 700;
+          margin-bottom: 0;
+        }
+        &.visible {
+          transform: translate(0, 0);
+          transition-duration: 3s;
+          transition-property: transform;
+          @media all and (max-width: 699px) {
+            transition-delay: 0s;
+          }
+          @media all and (min-width: 700px) {
+            transition-delay: 250ms;
+          }
         }
       }
     }

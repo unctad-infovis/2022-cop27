@@ -5,6 +5,8 @@ import { transpose } from 'csv-transpose';
 import CSVtoJSON from './helpers/CSVtoJSON.js';
 import ChartBar from './charts/ChartBar.jsx';
 
+import '../styles/styles.less';
+
 function Figure1() {
   // Data states.
   const [dataFigure, setDataFigure] = useState(false);

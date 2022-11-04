@@ -14,8 +14,6 @@ import highchartsExportData from 'highcharts/modules/export-data';
 // Load helpers.
 import roundNr from '../helpers/RoundNr.js';
 
-import '../../styles/styles.less';
-
 highchartsAccessibility(Highcharts);
 highchartsExporting(Highcharts);
 highchartsExportData(Highcharts);
@@ -50,7 +48,7 @@ function BarChart({
 }) {
   const chartRef = useRef();
 
-  const chartHeight = 600;
+  const chartHeight = 650;
   const isVisible = useIsVisible(chartRef, { once: true });
   const createChart = useCallback(() => {
     Highcharts.chart(`chartIdx${idx}`, {
