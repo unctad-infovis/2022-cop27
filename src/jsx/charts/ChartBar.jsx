@@ -50,8 +50,6 @@ function BarChart({
 }) {
   const chartRef = useRef();
 
-  console.log(data);
-
   const chartHeight = 600;
   const isVisible = useIsVisible(chartRef, { once: true });
   const createChart = useCallback(() => {
