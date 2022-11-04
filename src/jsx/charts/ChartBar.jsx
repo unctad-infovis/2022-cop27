@@ -225,6 +225,10 @@ function BarChart({
         gridLineWidth: 1,
         gridLineDashStyle: 'shortdot',
         labels: {
+          formatter() {
+            // eslint-disable-next-line react/no-this-in-sfc
+            return `-${this.value}`;
+          },
           rotation: 0,
           style: {
             color: 'rgba(0, 0, 0, 0.8)',

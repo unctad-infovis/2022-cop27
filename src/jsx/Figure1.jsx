@@ -53,7 +53,7 @@ function Figure1() {
         labels_inside
         note="Numbers for 2022 are project based on the first three quarters for international project finance deals and the first 8 months for greenfield projects."
         source="UNCTAD secretariat calculations based on information from the Financial Times Ltd, fDi Markets for accounced greenfield FDI projects and Refinitiv SA for international projects finance deals."
-        subtitle="Greenfield project announcements and international project finance deals January-September 2022 vs. 2021, percentage"
+        subtitle="Greenfield project announcements and international project finance deals January–September 2022 vs. 2021, percentage"
         suffix="%"
         title="Investment to tackle climate change falls amid crises"
         ymax={30}
