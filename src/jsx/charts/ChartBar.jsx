@@ -61,7 +61,7 @@ function BarChart({
         margin: 15,
         style: {
           color: 'rgba(0, 0, 0, 0.8)',
-          fontSize: '16px'
+          fontSize: '14px'
         },
         text: `<em>Source:</em> ${source} ${note ? (`<br /><em>Note:</em> <span>${note}</span>`) : ''}`,
         verticalAlign: 'bottom',
@@ -268,11 +268,13 @@ function BarChart({
         type: 'linear'
       }
     }, (chart) => {
-      const { caption } = chart;
-      caption.styles.fontSize = 14;
-      chart.update({
-        caption
-      });
+      setTimeout(() => {
+        const { caption } = chart;
+        caption.styles.fontSize = 14;
+        chart.update({
+          caption
+        });
+      }, 100);
     });
     chartRef.current.querySelector(`#chartIdx${idx}`).style.opacity = 1;
   }, [export_title_margin, data, data_decimals, idx, labels_inside, note, source, subtitle, suffix, title, xlabel, ylabel, ymax, ymin]);
