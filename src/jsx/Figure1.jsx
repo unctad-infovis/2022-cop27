@@ -26,7 +26,7 @@ function Figure1() {
   });
 
   useEffect(() => {
-    const data_file = `${(window.location.href.includes('unctad.org')) ? 'https://storage.unctad.org/2022-cop27/' : './'}assets/data/2022-cop27_figure1.csv`;
+    const data_file = `${(window.location.href.includes('unctad.org')) ? 'https://storage.unctad.org/2022-cop27/' : './'}assets/data/2022-cop27_figure_1.csv`;
     try {
       fetch(data_file)
         .then((response) => {
