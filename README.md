@@ -2,6 +2,12 @@
 
 **Live demo** https://unctad-infovis.github.io/2022-cop27/
 
+## Used in
+
+* [UNCTAD at COP27](https://unctad.org/programme/unctad-and-cop27)
+* [UNCTAD/Twitter](https://twitter.com/UNCTAD/status/1592456593601269761)
+* [UNCTAD/Twitter](https://www.instagram.com/p/Ck-le3stUKk/)
+
 ## Rights of usage
 
 Contact Teemo Tebest.
