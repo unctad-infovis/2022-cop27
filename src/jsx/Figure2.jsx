@@ -17,8 +17,8 @@ function Figure1() {
 
     return ({
       data: values.map((val, i) => ({
-        color: (keys[i] === 'Mitigation' || keys[i] === 'Adaptation') ? '#004987' : undefined,
-        y: Math.abs(parseFloat(val)),
+        color: (keys[i] === 'Water management') ? '#009edb' : '#eb1f48',
+        y: parseFloat(val),
       })).filter(val => !Number.isNaN(val.y)),
       labels: keys.filter(val => val !== 'Name'),
       name: el.Name
@@ -26,7 +26,7 @@ function Figure1() {
   });
 
   useEffect(() => {
-    const data_file = `${(window.location.href.includes('unctad.org')) ? 'https://storage.unctad.org/2022-cop27/' : './'}assets/data/2022-cop27_figure_1.csv`;
+    const data_file = `${(window.location.href.includes('unctad.org')) ? 'https://storage.unctad.org/2022-cop27/' : './'}assets/data/2022-cop27_figure_2.csv`;
     try {
       fetch(data_file)
         .then((response) => {
@@ -45,21 +45,20 @@ function Figure1() {
     <div className="app">
       {dataFigure && (
       <ChartBar
+        idx="2"
         data={dataFigure}
         data_decimals={0}
         export_title_margin={30}
-        idx="1"
-        labels_inside
         margin={30}
-        note="Numbers for 2022 are project based on the first three quarters for international project finance deals and the first 8 months for greenfield projects."
-        prefix="-"
+        labels_inside
+        note=""
         source="UNCTAD secretariat calculations based on information from the Financial Times Ltd, fDi Markets for accounced greenfield FDI projects and Refinitiv SA for international projects finance deals."
-        subtitle="Greenfield project announcements and international project finance deals January–September 2022 vs. 2021, percentage"
+        subtitle="Number of greenfield project announcements and international finance deals"
         suffix="%"
-        title="Investment to tackle climate change falls amid crises"
+        title="Climate change investment trend, 2022 vs 2021"
+        ymax={6}
+        ymin={-14}
         ylabel="Percentage"
-        ymax={30}
-        ymin={0}
       />
       )}
     </div>

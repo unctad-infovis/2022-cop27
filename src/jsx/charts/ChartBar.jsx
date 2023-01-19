@@ -44,7 +44,7 @@ Highcharts.SVGRenderer.prototype.symbols.download = (x, y, w, h) => {
 };
 
 function BarChart({
-  data, data_decimals, export_title_margin, idx, labels_inside, note, source, subtitle, suffix, title, xlabel, ylabel, ymax, ymin
+  data, data_decimals, export_title_margin, idx, labels_inside, prefix, note, source, subtitle, suffix, title, xlabel, ylabel, ymax, ymin
 }) {
   const chartRef = useRef();
 
@@ -128,7 +128,7 @@ function BarChart({
             enabled: true,
             formatter() {
               // eslint-disable-next-line react/no-this-in-sfc
-              return `-${roundNr(this.y, data_decimals).toFixed(data_decimals)}${suffix}`;
+              return `${prefix}${roundNr(this.y, data_decimals).toFixed(data_decimals)}${suffix}`;
             },
             color: (labels_inside) ? '#fff' : 'rgba(0, 0, 0, 0.8)',
             style: {
@@ -227,7 +227,7 @@ function BarChart({
         labels: {
           formatter() {
             // eslint-disable-next-line react/no-this-in-sfc
-            return `-${this.value}`;
+            return `${prefix}${this.value}`;
           },
           rotation: 0,
           style: {
@@ -249,9 +249,9 @@ function BarChart({
           value: 0,
           width: 1
         }],
-        showFirstLabel: false,
+        showFirstLabel: true,
         showLastLabel: true,
-        tickInterval: 5,
+        tickInterval: 2,
         title: {
           enabled: true,
           reserveSpace: true,
@@ -277,7 +277,7 @@ function BarChart({
       }, 100);
     });
     chartRef.current.querySelector(`#chartIdx${idx}`).style.opacity = 1;
-  }, [export_title_margin, data, data_decimals, idx, labels_inside, note, source, subtitle, suffix, title, xlabel, ylabel, ymax, ymin]);
+  }, [export_title_margin, data, data_decimals, idx, labels_inside, note, prefix, source, subtitle, suffix, title, xlabel, ylabel, ymax, ymin]);
 
   useEffect(() => {
     if (isVisible === true) {
@@ -304,6 +304,7 @@ BarChart.propTypes = {
   idx: PropTypes.string.isRequired,
   labels_inside: PropTypes.bool,
   note: PropTypes.oneOfType([PropTypes.bool, PropTypes.string]),
+  prefix: PropTypes.string,
   source: PropTypes.string.isRequired,
   subtitle: PropTypes.string,
   suffix: PropTypes.string,
@@ -318,6 +319,7 @@ BarChart.defaultProps = {
   export_title_margin: 0,
   labels_inside: false,
   note: false,
+  prefix: '',
   subtitle: false,
   suffix: '',
   xlabel: '',
